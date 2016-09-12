@@ -2,7 +2,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class EvilDoctorsTest {
+public class HospitalTest2 {
 
 	@Test
 	public void testAPatientCanDie() throws Exception {

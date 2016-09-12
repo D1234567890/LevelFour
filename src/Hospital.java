@@ -1,8 +1,11 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Hospital {
 	private ArrayList<Doctor> doctors = new ArrayList<Doctor>();
 	private ArrayList<Patient> patients = new ArrayList<Patient>();
+	private ArrayList<Zombie> zombies = new ArrayList<Zombie>();
+	
 	void addDoctor(Doctor d) {
 		doctors.add(d);
 	}
@@ -35,5 +38,35 @@ public class Hospital {
 				}
 			}
 		}
+	}
+	
+	void add(Patient p) {
+		patients.add(p);
+	}
+	
+	void add(Doctor d) {
+		doctors.add(d);
+	}
+	
+	void makeDoctorsWork() {
+		for (Doctor d: doctors) {
+			d.doMedicine();
+		}
+		
+		for (Patient p: patients) {
+			if (!p.isAlive()) {
+				patients.remove(0);
+				zombies.add(new Zombie(new Date().toString()));
+				System.out.println(zombies.size());
+			}
+		}
+	}
+	
+	void addZombie(Zombie z) {
+		zombies.add(z);
+	}
+	
+	ArrayList<Zombie> getZombies() {
+		return zombies;
 	}
 }
