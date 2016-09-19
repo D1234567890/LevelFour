@@ -104,6 +104,8 @@ public class HospitalTest2 {
 		Hospital walkingDeadHospital = new Hospital();
 		Doctor evilDoctor = new Doctor("666", walkingDeadHospital);
 		Doctor niceDoctor = new Doctor("777", walkingDeadHospital);
+		if (!evilDoctor.isEvil()) {
+		}
 		walkingDeadHospital.add(evilDoctor);
 		walkingDeadHospital.add(niceDoctor);
 		walkingDeadHospital.add(new Patient());

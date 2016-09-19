@@ -49,16 +49,21 @@ public class Hospital {
 	}
 	
 	void makeDoctorsWork() {
+		int store = 0;
+		
 		for (Doctor d: doctors) {
 			d.doMedicine();
 		}
 		
 		for (Patient p: patients) {
 			if (!p.isAlive()) {
-				patients.remove(0);
-				zombies.add(new Zombie(new Date().toString()));
-				System.out.println(zombies.size());
+				store++;
 			}
+		}
+		
+		for (int i = 0; i < store; i++) {
+			patients.remove(0);
+			zombies.add(new Zombie(new Date().toString()));
 		}
 	}
 	

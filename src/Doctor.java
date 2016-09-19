@@ -2,16 +2,24 @@ import java.util.ArrayList;
 
 public class Doctor {
 	private ArrayList<Patient> patients = new ArrayList<Patient>();
-	private boolean isEvil = false;
+	private boolean isEvil;
 	private Hospital h;
 	
 	Doctor(String s) {
 		if (s.equals("666")) {
 			isEvil = true;
+		} else {
+			isEvil = false;
 		}
 	}
 	
 	Doctor(String s, Hospital h) {
+		if (s.equals("666")) {
+			isEvil = true;
+		} else {
+			isEvil = false;
+		}
+		
 		this.h = h;
 	}
 	
