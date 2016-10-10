@@ -36,7 +36,7 @@ public class WhileLoops {
 		long amount = 1;
 		long slices = 1046;
 		long years = 0;
-		while (slices <= amount) {
+		while (slices >= amount) {
 			slices /= 2;
 			years++;
 		}
